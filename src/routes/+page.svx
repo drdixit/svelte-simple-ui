@@ -1,0 +1,35 @@
+---
+title: Home
+description: "svelte-simple-ui — upcoming tiny UI primitives for Svelte."
+---
+
+import Card from '$lib/ui/Card.svelte'
+
+# svelte-simple-ui
+
+Welcome — a beautiful, small UI primitives library built for Svelte. This demo site shows the planned components and docs.
+
+<Card>
+## What is svelte-simple-ui
+
+Lightweight primitives optimized for accessibility, performance, and DX. Components are designed to be small, themeable, and animated.
+</Card>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem">
+  <Card>
+    <h3>Fast</h3>
+    <p>Small bundles, SSR-friendly, adapter-static ready.</p>
+  </Card>
+  <Card>
+    <h3>Accessible</h3>
+    <p>Focus styles, aria roles, keyboard-first interactions.</p>
+  </Card>
+  <Card>
+    <h3>Themeable</h3>
+    <p>CSS variables, light/dark, easy to customize.</p>
+  </Card>
+  <Card>
+    <h3>Animated</h3>
+    <p>Tasteful motion via Motion One with reduced-motion support.</p>
+  </Card>
+</div>

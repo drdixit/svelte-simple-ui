@@ -1,0 +1,27 @@
+---
+title: Components
+---
+
+import Card from '$lib/ui/Card.svelte'
+
+# Components
+
+Search and browse planned components. This page demonstrates preview cards and links to detailed docs.
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem">
+  <Card>
+    <h3>Button</h3>
+    <p>Primary and ghost buttons. Small, accessible, animated.</p>
+    <a href="/components/button">View</a>
+  </Card>
+  <Card>
+    <h3>Card</h3>
+    <p>Soft cards with elevation and content slots.</p>
+    <a href="/components/card">View</a>
+  </Card>
+  <Card>
+    <h3>ResponsiveImage</h3>
+    <p>Lazy-loaded images with LQIP and fade-in.</p>
+    <a href="/components/responsiveimage">View</a>
+  </Card>
+</div>

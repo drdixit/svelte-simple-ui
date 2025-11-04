@@ -1,0 +1,25 @@
+---
+title: Button
+description: Button primitive
+---
+
+
+import Button from '$lib/ui/Button.svelte'
+import CodeBlock from '$lib/ui/CodeBlock.svelte'
+
+# Button
+
+<Button>Primary</Button>
+
+<CodeBlock code={`<Button variant="primary">Primary</Button>`} lang="svelte" />
+
+## Props
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| variant | 'primary' | 'primary' | Visual style |
+| size | 'md' | 'md' | Button size |
+
+## Accessibility
+
+Use native <button> element for semantics. Ensure label texts are descriptive.

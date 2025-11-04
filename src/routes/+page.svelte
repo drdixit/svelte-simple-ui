@@ -1,59 +1,51 @@
-<script lang="ts">
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcomeFallback from '$lib/images/svelte-welcome.png';
+<script>
+	import Button from '$lib/ui/Button.svelte';
+	import Card from '$lib/ui/Card.svelte';
+	import CodeBlock from '$lib/ui/CodeBlock.svelte';
+	import Playground from '$lib/ui/Playground.svelte';
+	import Badge from '$lib/ui/Badge.svelte';
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>svelte-simple-ui — Beautiful, tiny primitives</title>
+	<meta name="description" content="svelte-simple-ui — lightweight, accessible UI primitives built with Svelte. Documentation and interactive examples." />
+	<meta name="robots" content="index, follow" />
 </svelte:head>
 
-<section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcomeFallback} alt="Welcome" />
-			</picture>
-		</span>
+<section style="max-width:1100px;margin:0 auto;padding:2rem 1rem;">
+	<div style="display:grid;grid-template-columns:1fr 420px;gap:2rem;align-items:start">
+		<div>
+			<h2 style="margin:0 0 0.5rem 0;font-size:1rem;color:#cfe6ff;">Design system</h2>
+			<h1 style="margin:0 0 1rem 0;font-size:2rem;">A tiny set of beautiful, accessible UI primitives for Svelte</h1>
+			<p style="color:#cfe6ff;max-width:45rem">svelte-simple-ui showcases Buttons, Cards, CodeBlocks, Badges and a small interactive Playground — all implemented locally so the website can show the design without importing the package.</p>
 
-		to your new<br />SvelteKit app
-	</h1>
+			<div style="margin-top:1.25rem;display:flex;gap:1rem;align-items:center">
+				<Button size="lg">Get started</Button>
+				<a class="btn" href="/about" style="text-decoration:none;color:#ffd1bf;font-weight:700">Learn more →</a>
+			</div>
 
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
+			<div style="margin-top:1.5rem;display:flex;gap:0.75rem;align-items:center">
+				<Badge pill>New</Badge>
+				<Badge tone="success">Accessible</Badge>
+				<Badge tone="warning">Lightweight</Badge>
+			</div>
+		</div>
 
-	<Counter />
+		<aside>
+			<Card>
+				<div style="display:flex;flex-direction:column;gap:0.75rem">
+					<div style="font-weight:800">Quick example</div>
+					<CodeBlock code={`<Button>Save</Button>`} />
+				</div>
+			</Card>
+		</aside>
+	</div>
+
+	<div style="margin-top:2rem;">
+		<Playground />
+	</div>
 </section>
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
+	:global(.btn){display:inline-flex;align-items:center;padding:.6rem 1rem;border-radius:12px;background:linear-gradient(180deg,#ff5b1a,#ff4200);color:white}
 </style>
