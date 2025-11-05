@@ -6,8 +6,13 @@
   let Prism: any;
   onMount(async () => {
     Prism = await import('prismjs');
-    await import('prismjs/components/prism-svelte');
-    highlighted = Prism.highlight(code, Prism.languages.svelte, 'svelte');
+    // Import additional language support if needed
+    if (lang === 'javascript' || lang === 'js') {
+      await import('prismjs/components/prism-javascript');
+    }
+    // Use markup/html for svelte syntax highlighting as fallback
+    const language = Prism.languages[lang] || Prism.languages.markup || Prism.languages.html;
+    highlighted = Prism.highlight(code, language, lang);
   });
   let copied = false;
   async function copy() {
@@ -18,7 +23,7 @@
 </script>
 
 <div class="code-block">
-  <pre class="language-{lang}"><code bind:innerHTML={highlighted}></code></pre>
+  <pre class="language-{lang}"><code>{@html highlighted}</code></pre>
   <button class="copy" on:click={copy}>{copied ? 'Copied' : 'Copy'}</button>
 </div>
 
